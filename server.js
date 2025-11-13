@@ -187,12 +187,19 @@ function findAnswer(message) {
 
   return bestScore > 0 ? best : null;
 }
-
 // --------------------
 // Routes
 // --------------------
 app.post("/chat", (req, res) => {
   try {
+    // Check for frontend secret (optional security)
+    const frontendSecret = req.headers["x-frontend-secret"];
+    const expectedSecret = process.env.FRONTEND_SECRET || "WE_ARE_10_262025";
+
+    if (frontendSecret && frontendSecret !== expectedSecret) {
+      return res.status(401).json({ error: "Invalid secret" });
+    }
+
     const userMessage = (req.body?.message || "").toString();
     if (!userMessage.trim()) {
       return res.status(400).json({ error: "Message required" });
