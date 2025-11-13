@@ -6,7 +6,7 @@ import rateLimit from "express-rate-limit";
 // Load environment variables
 dotenv.config();
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 const app = express();
 
 // Middleware
