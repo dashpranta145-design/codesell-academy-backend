@@ -12,10 +12,29 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// FIXED CORS configuration
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "*",
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+
+      const allowedOrigins = [
+        "https://codesell-academy.vercel.app",
+        "http://localhost:5173",
+        "http://localhost:3000",
+      ];
+
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "x-frontend-secret", "Authorization"],
   })
 );
 
