@@ -14,11 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: [
-      "https://codesell-academy.vercel.app",
-      "http://localhost:5173", // for local development
-      "http://localhost:3000", // for local development
-    ],
+    origin: process.env.FRONTEND_URL || "*",
     credentials: true,
   })
 );
