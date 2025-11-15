@@ -147,6 +147,14 @@ const qaPairs = [
     answer_bn:
       "যোগাযোগ: \n +৮৮০ ১৮৭৬৬৭৫১৪৫ \n codesellacademy@gmail.com \n — আমরা ২৪ ঘন্টার মধ্যে আপনার সাথে যোগাযোগ করব।",
   },
+  {
+    keywords: ["guide", "guidance", "select"],
+    keywords_bn: ["গাইড", "বাছাই"],
+    answer_en:
+      "To choose the right course, first identify your goal (job, skill, or project). Then check your current skill level and match it with a course that fits your experience. Finally, review the syllabus, duration, and career outcome to confirm it aligns with your objective. \n And we codesell academy here to help you to kickstart your tech journey. \n For more information, please contact with us.",
+    answer_bn:
+      "সঠিক কোর্স বেছে নিতে প্রথমে আপনার লক্ষ্য নির্ধারণ করুন (চাকরি, দক্ষতা, বা প্রজেক্ট)। এরপর নিজের বর্তমান দক্ষতার স্তর মূল্যায়ন করে সেই অনুযায়ী উপযুক্ত কোর্স মিলিয়ে নিন। শেষে সিলেবাস, সময়কাল এবং ক্যারিয়ার ফলাফল দেখে নিশ্চিত করুন কোর্সটি আপনার লক্ষ্য পূরণে সহায়ক হবে। \n আপনার এই পথচলায় সাথে রয়েছি কোডসেল একাডেমী । \n আরো বিস্তারিত জানতে জানতে আমাদের সাথে যোগাযোগ করুন ।",
+  },
 ];
 
 // --------------------
