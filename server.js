@@ -52,12 +52,23 @@ app.use(limiter);
 
 // --------------------
 // Q/A Pairs
-// --------------------
 const qaPairs = [
   // ✅ FREE/ DEMO - Very specific, should come FIRST
   {
-    keywords: ["free", "demo", "trial"],
-    keywords_bn: ["ফ্রী", "ফ্রি", "ডেমো", "ট্রায়াল"],
+    keywords: [
+      "free class",
+      "free course",
+      "demo class",
+      "trial class",
+      "free trial",
+    ],
+    keywords_bn: [
+      "ফ্রী ক্লাস",
+      "ফ্রি ক্লাস",
+      "ডেমো ক্লাস",
+      "ট্রায়াল ক্লাস",
+      "ফ্রী ট্রায়াল",
+    ],
     answer_en:
       "Sorry! \n Currently, we don't offer any free classes. If we arrange one in the future, we will definitely notify you.",
     answer_bn:
@@ -67,18 +78,20 @@ const qaPairs = [
   // ✅ GUIDE - Specific guidance questions
   {
     keywords: [
-      "which course",
+      "which course should i take",
       "what should i learn",
       "choose course",
       "select course",
       "career guidance",
+      "help me choose",
     ],
     keywords_bn: [
-      "কোন কোর্স",
+      "কোন কোর্সটা নিব",
       "কি শিখব",
       "কোর্স বাছাই",
       "গাইডলাইন",
       "ক্যারিয়ার গাইড",
+      "কোনটা শিখব",
     ],
     answer_en:
       "To choose the right course, first identify your goal (job, skill, or project). Then check your current skill level and match it with a course that fits your experience. Finally, review the syllabus, duration, and career outcome to confirm it aligns with your objective. \n And we codesell academy here to help you to kickstart your tech journey. \n For more information, please contact with us.",
@@ -88,16 +101,17 @@ const qaPairs = [
 
   // ✅ ONLINE CLASS - Specific service question
   {
-    keywords: ["online", "online class", "online classes", "virtual"],
+    keywords: [
+      "online class",
+      "online classes",
+      "virtual class",
+      "take class online",
+    ],
     keywords_bn: [
-      "অনলাইন",
       "অনলাইন ক্লাস",
       "অনলাইন কোর্স",
-      "অনলাইনে হয়",
-      "অনলাইনে করেন",
-      "আপনারা কি অনলাইন ক্লাস করান",
-      "অনলাইন কি আছে",
-      "অনলাইন সাপোর্ট",
+      "অনলাইনে ক্লাস",
+      "অনলাইনে পড়ানো",
     ],
     answer_en:
       "🖥️ Yes! We provide live online classes with recordings, teacher support, and assignments.",
@@ -108,15 +122,14 @@ const qaPairs = [
   // ✅ Course Fee
   {
     keywords: [
-      "fee",
+      "course fee",
+      "how much",
       "cost",
       "price",
-      "tuition",
+      "tuition fee",
       "payment",
-      "how much",
-      "course fee",
     ],
-    keywords_bn: ["ফি", "টাকা", "দাম", "খরচ", "কত টাকা", "ফি কত", "কোর্স ফি"],
+    keywords_bn: ["কোর্স ফি", "কত টাকা", "দাম", "খরচ", "ফি কত"],
     answer_en:
       "💰 Course fees vary:\n• Web Development: BDT 10,000 \n• Digital Marketing: BDT 10,000\n• Data Science: BDT 10,000 \n• Spoken English: BDT 3000 \n• Computer Fundamental: BDT 3000 \n\nInstallments available!",
     answer_bn:
@@ -124,8 +137,8 @@ const qaPairs = [
   },
 
   {
-    keywords: ["duration", "how long", "months", "course length"],
-    keywords_bn: ["মাস", "সময়", "সময়কাল", "কতদিন", "কত মাস"],
+    keywords: ["duration", "how long", "course duration", "months"],
+    keywords_bn: ["কতদিন", "সময়", "সময়কাল", "কত মাস"],
     answer_en:
       "⏰ Typical durations: \n• Web Dev - 6 months \n• Data Science - 6 months \n• Digital Marketing - 6 months \n• Computer Fundamental - 3 months \n• Spoken - 3 months",
     answer_bn:
@@ -135,22 +148,12 @@ const qaPairs = [
   // ✅ Courses List
   {
     keywords: [
-      "course",
-      "courses",
-      "class",
-      "training",
-      "program",
       "what courses",
       "course list",
+      "available courses",
+      "which courses",
     ],
-    keywords_bn: [
-      "কোর্স",
-      "কোর্সসমূহ",
-      "ক্লাস",
-      "প্রশিক্ষণ",
-      "কি কি কোর্স",
-      "কোর্স আছে",
-    ],
+    keywords_bn: ["কি কি কোর্স", "কোর্স লিস্ট", "কোর্স আছে", "কোন কোন কোর্স"],
     answer_en:
       "📚 Our courses:\n• Web Development\n• Digital Marketing\n• Data Science \n• Spoken English\n• Programming Basics\n\nWhich course interests you?",
     answer_bn:
@@ -158,15 +161,15 @@ const qaPairs = [
   },
 
   {
-    keywords: ["contact", "phone", "email", "reach"],
-    keywords_bn: ["যোগাযোগ", "ফোন", "ইমেইল", "নম্বর"],
+    keywords: ["contact", "phone number", "email", "reach us"],
+    keywords_bn: ["যোগাযোগ", "ফোন নম্বর", "ইমেইল", "কন্টাক্ট"],
     answer_en:
       "Contact: \n +880 1876675145 \n codesellacademy@gmail.com \n — We'll respond within 24 hours.",
     answer_bn:
       "যোগাযোগ: \n +৮৮০ ১৮৭৬৬৭৫১৪৫ \n codesellacademy@gmail.com \n — আমরা ২৪ ঘন্টার মধ্যে আপনার সাথে যোগাযোগ করব।",
   },
 
-  // ✅ HOW ARE YOU - General greeting, should come LAST
+  // ✅ General words (should come LAST)
   {
     keywords: [
       "how are you",
