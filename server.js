@@ -172,6 +172,7 @@ const qaPairs = [
   // ✅ General words (should come LAST)
   {
     keywords: [
+      "Hi",
       "how are you",
       "how r you",
       "how r u",
