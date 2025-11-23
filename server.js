@@ -6,14 +6,14 @@ import rateLimit from "express-rate-limit";
 // Load environment variables
 dotenv.config();
 
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// FIXED CORS configuration
+// UPDATED CORS configuration for production
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -21,14 +21,16 @@ app.use(
       if (!origin) return callback(null, true);
 
       const allowedOrigins = [
-        "https://codesell-academy.vercel.app",
-        "http://localhost:5173",
-        "http://localhost:3000",
+        "https://at-codesell-academy.com", // YOUR ACTUAL DOMAIN
+        "https://www.at-codesell-academy.com", // WWW version
+        "http://localhost:5173", // Dev server
+        "http://localhost:3000", // Alternative dev
       ];
 
       if (allowedOrigins.indexOf(origin) !== -1) {
         callback(null, true);
       } else {
+        console.log("CORS blocked origin:", origin);
         callback(new Error("Not allowed by CORS"));
       }
     },
